@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  /* overflow: hidden; */
+}
+
+.Todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 20%;
+}
+
+li.Add-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin-inline: 20%;
+  margin-top: 5%;
+}
+
+input {
+  height: 30px;
+  width: 90%;
+  border: none;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.renderPage {
+  margin-top: 10%;
+}
+
+.renderPage input {
+  width: 30%;
+}
+
+.individualtasks {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.indtsk {
+  display: flex;
+  width: 70%;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.last {
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10%;
+  background: #dedede;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.last a {
+  font-size: 30px;
+  text-decoration: none;
+}
