@@ -7,7 +7,7 @@ export default class Task {
 
   addTask(taskList) {
     const myTask = new Task(this.taskEntry);
-    myTask.index = taskList.length
+    myTask.index = taskList.length;
     taskList.push(myTask);
     localStorage.setItem('taskDetail', JSON.stringify(taskList));
   }
