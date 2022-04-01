@@ -1,8 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-
-  /* overflow: hidden; */
 }
 
 .Todo-header {
@@ -68,4 +66,8 @@ li {
 .last a {
   font-size: 30px;
   text-decoration: none;
+}
+
+.entry {
+  border: none;
 }
