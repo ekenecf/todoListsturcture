@@ -8,7 +8,6 @@ let taskList = [];
 const listInput = document.getElementById('listInput');
 taskList = JSON.parse(localStorage.getItem('taskDetail')) || [];
 showPage(taskList);
-// window.location.reload
 
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();

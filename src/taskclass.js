@@ -2,10 +2,12 @@ export default class Task {
   constructor(taskEntry) {
     this.taskEntry = taskEntry;
     this.completed = false;
+    this.index = 0;
   }
 
   addTask(taskList) {
     const myTask = new Task(this.taskEntry);
+    myTask.index = taskList.length
     taskList.push(myTask);
     localStorage.setItem('taskDetail', JSON.stringify(taskList));
   }
