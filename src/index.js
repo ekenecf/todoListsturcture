@@ -9,6 +9,7 @@ const listInput = document.getElementById('listInput');
 taskList = JSON.parse(localStorage.getItem('taskDetail')) || [];
 showPage(taskList);
 
+
 addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const putTask = new Task(listInput.value);
