@@ -13,16 +13,14 @@ const showPage = (taskList) => {
     const clear = document.querySelectorAll('.fa-solid.fa-ellipsis-vertical.fa-lg');
     clear.forEach((task, index) => task.addEventListener('click', () => Task.delTask(index, taskList)));
     return taskList;
-    
   });
   const clear = document.querySelector('.clear');
-  let  checkboxs;
-  clear.addEventListener('click', () =>{   
+
+  clear.addEventListener('click', () => {
     const checked1 = document.querySelectorAll('input[class=checkbox]');
     if (checked1 === true) {
-      Task.delTask(index, taskList);
+      Task.delTask(taskList);
     }
-  })
-  
+  });
 };
 export default showPage;
