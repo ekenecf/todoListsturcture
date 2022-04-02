@@ -1,20 +1,22 @@
 import './style.css';
+import Task from './taskclass.js';
+import showPage from './renderTask.js';
 
-const renderPage = document.querySelector('.renderPage');
+const addBtn = document.querySelector('.fa-solid.fa-plus.fa-lg');
 
-const taskList = [
-  { id: 0, description: 'go to the moon', completed: false },
-  { id: 1, description: 'Eat breakfast', completed: true },
-  { id: 2, description: 'Go to the gym', completed: false },
-  { id: 3, description: 'Go on vacation', completed: true },
-  { id: 4, description: 'Sleeping time', completed: false },
-];
-renderPage.innerHTML = '';
-taskList.map((task) => {
-  taskList.sort((a, b) => a - b);
-  renderPage.innerHTML += `
-    <li class="individualtasks" id= ${task.id}> <span class= "indtsk"><input type="checkbox" ${task.completed ? 'checked' : 'unchecked'}>
-    <span>${task.description}</span></span><span class="fa-solid fa-ellipsis-vertical fa-lg"></span>
-    </li>`;
-  return task;
+let taskList = [];
+const listInput = document.getElementById('listInput');
+taskList = JSON.parse(localStorage.getItem('taskDetail')) || [];
+showPage(taskList);
+
+addBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const putTask = new Task(listInput.value);
+  putTask.addTask(taskList);
+
+  listInput.value = '';
+  showPage(taskList);
 });
+
+const edit = document.querySelectorAll('.fa-solid.fa-pen-clip');
+edit.forEach((edits, index) => edits.addEventListener('click', () => Task.editTask(taskList, index)));
