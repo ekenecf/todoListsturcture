@@ -13,7 +13,6 @@ export default class Task {
   }
 
   static delTask(index, taskList) {
-    console.log('i got index ', index);
     taskList = taskList.filter((tasks, i) => index !== i);
     localStorage.setItem('taskDetail', JSON.stringify(taskList));
     window.location.reload();
