@@ -6,7 +6,7 @@ const showPage = (taskList) => {
   renderPage.innerHTML = '';
   taskList.map((task, index) => {
     renderPage.innerHTML += `
-    <li class="individualtasks"><input type="checkbox" class="checkbox"  id= "${index}" ${task.completed ? 'checked' : 'not'}>
+    <li class="individualtasks"><input type="checkbox" id= "${index}" ${task.completed ? 'checked' : 'not'}>
     <input class="entry" id="update${index}" value ="${task.taskEntry}"><span  class="fa-solid fa-ellipsis-vertical fa-lg"></span><span><i class="fa-solid fa-pen-clip"></i></span>
     </li>`;
 
