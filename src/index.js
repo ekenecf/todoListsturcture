@@ -13,7 +13,6 @@ addBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const putTask = new Task(listInput.value);
   putTask.addTask(taskList);
-
   listInput.value = '';
   showPage(taskList);
 });

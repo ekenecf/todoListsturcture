@@ -47,5 +47,4 @@ const showPage = (taskList) => {
   });
   completechecker();
 };
-
 export default showPage;
