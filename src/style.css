@@ -71,3 +71,7 @@ li {
 .entry {
   border: none;
 }
+
+.fa-trash:hover {
+  cursor: pointer;
+}
