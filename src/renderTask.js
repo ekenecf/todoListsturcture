@@ -7,11 +7,11 @@ const showPage = (taskList) => {
   taskList.map((task, index) => {
     renderPage.innerHTML += `
     <li class="individualtasks"><input type="checkbox" id= "${index}" ${task.completed ? 'checked' : 'not'}>
-    <input class="entry" id="update${index}" value ="${task.taskEntry}"><span><i class="fa fa-trash" aria-hidden="true"></i>
-    </span><span><i class="fa-solid fa-pen-clip"></i></span>
+    <input class="entry" id="update${index}" value ="${task.taskEntry}"><i class="fa fa-trash" aria-hidden="true"></i>
+    <span><i class="fa-solid fa-pen-clip"></i></span>
     </li>`;
 
-    const clear = document.querySelectorAll('.fa-solid.fa-ellipsis-vertical.fa-lg');
+    const clear = document.querySelectorAll('.fa-trash');
     clear.forEach((task, index) => task.addEventListener('click', () => Task.delTask(index, taskList)));
     return taskList;
   });
