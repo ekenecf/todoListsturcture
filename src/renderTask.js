@@ -7,7 +7,7 @@ const showPage = (taskList) => {
   taskList.map((task, index) => {
     renderPage.innerHTML += `
     <li class="individualtasks"><input type="checkbox" id= "${index}" ${task.completed ? 'checked' : 'not'}>
-    <input class="entry" id="update${index}" value ="${task.taskEntry}"><span  class="fa-solid fa-ellipsis-vertical fa-lg"></span><span><i class="fa-solid fa-pen-clip"></i></span>
+    <input class="entry" id="update${index}" value ="${task.taskEntry}"><span  class="fa-solid fa-e llipsis-vertical fa-lg"></span><span><i class="fa-solid fa-pen-clip"></i></span>
     </li>`;
 
     const clear = document.querySelectorAll('.fa-solid.fa-ellipsis-vertical.fa-lg');
@@ -31,13 +31,9 @@ const showPage = (taskList) => {
 
   const clearAll = document.querySelector('.clear');
   clearAll.addEventListener('click', () => {
-    const checked1 = document.querySelectorAll('input[class=checkbox]:checked');
-    checked1.forEach((row) => {
-      const x = row.parentNode;
-      const c1 = x.querySelector('.checkbox').id;
-      taskList = taskList.filter((currentlist) => currentlist.index !== Number(c1));
-      localStorage.setItem('taskDetail', JSON.stringify(taskList));
-    });
+    taskList = taskList.filter((t) => !t.completed);
+    localStorage.setItem('taskDetail', JSON.stringify(taskList));
+    window.location.reload();
 
     taskList.forEach((taskindex, i) => {
       taskindex.index = i;
