@@ -14,8 +14,7 @@ const showPage = (taskList) => {
     const clear = document.querySelectorAll('.fa-trash');
     clear.forEach((task, index) => task.addEventListener('click', () => Task.delTask(index, taskList)));
     const edit = document.querySelectorAll('.fa-solid.fa-pen-clip');
-    edit.forEach((edits, index) => edits.addEventListener('click', () => Task.editTask(taskList, index)
-));
+    edit.forEach((edits, index) => edits.addEventListener('click', () => Task.editTask(taskList, index)));
     return taskList;
   });
   const completechecker = () => {
