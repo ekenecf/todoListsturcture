@@ -16,6 +16,3 @@ addBtn.addEventListener('click', (e) => {
   listInput.value = '';
   showPage(taskList);
 });
-
-const edit = document.querySelectorAll('.fa-solid.fa-pen-clip');
-edit.forEach((edits, index) => edits.addEventListener('click', () => Task.editTask(taskList, index)));
