@@ -1,8 +1,22 @@
+function checkdate() {
+  const currentTime = new Date();
+  return currentTime;
+  // console.log("Time of creation", task.createdAt)
+  // new Date(Date.parse(s))
+}
+checkdate();
+
 export default class Task {
   constructor(taskEntry) {
     this.taskEntry = taskEntry;
     this.completed = false;
     this.index = 0;
+    this.createdAt = new Date().toString().slice(4, 24);
+  }
+
+  static compareDate() {
+    // fetch createdAt prop of a particular task from local storage
+
   }
 
   addTask(taskList) {
