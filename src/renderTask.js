@@ -6,7 +6,7 @@ const showPage = (taskList) => {
   renderPage.innerHTML = '';
   taskList.map((task, index) => {
     renderPage.innerHTML += `
-    <li class="individualtasks"><input type="checkbox" id= "${index}" ${task.completed ? 'checked' : 'not'}>
+    <li class="individualtasks"><p class="created_time">created ${Task.compareDateFunction(task)}</p><input type="checkbox" id= "${index}" ${task.completed ? 'checked' : 'not'}>
     <input class="entry" id="update${index}" value ="${task.taskEntry}"><i class="fa fa-trash" aria-hidden="true"></i>
     <span><i class="fa-solid fa-pen-clip"></i></span>
     </li>`;
@@ -17,6 +17,7 @@ const showPage = (taskList) => {
     edit.forEach((edits, index) => edits.addEventListener('click', () => Task.editTask(taskList, index)));
     return taskList;
   });
+
   const completechecker = () => {
     const checked1 = document.querySelectorAll('input[type=checkbox]');
 
@@ -47,3 +48,8 @@ const showPage = (taskList) => {
   completechecker();
 };
 export default showPage;
+
+// Add created time as property to Taskclass
+// when page refreshes fetch createdAt time from local storage
+// Pass created time as input to function
+// Convert
