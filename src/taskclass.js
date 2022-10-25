@@ -34,7 +34,7 @@ export default class Task {
     }
     const secondsDiff = currentDate.getSeconds() - +DatefromLocal[2];
     return secondsDiff > 1 ? `${secondsDiff} Seconds ago` : ' a Second ago';
-  };
+  }
 
   addTask(taskList) {
     const myTask = new Task(this.taskEntry);
